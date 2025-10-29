@@ -232,6 +232,7 @@ El Firewall de Windows es una herramienta de seguridad integrada en el sistema o
 Para acceder al Firewall de Windows, abre el buscador de Windows y busca Windows Defender Firewall con seguridad avanzada. Tambien puedes pulsar windows + R, escribir "firewall.cpl" y pulsas enter.
 
 Para agregar una regla de entrada o salida, puedes seguir estos pasos:
+
 1. En el Firewall de Windows, haz clic en "Configuración avanzada" en el panel izquierdo.
 2. Selecciona "Reglas de entrada" o "Reglas de salida" según sea necesario.
 3. Haz clic en "Nueva regla" en el panel derecho y sigue el asistente para crear la regla.
@@ -242,12 +243,14 @@ La regla nueva aparecerá en la lista de reglas de entrada o salida, dependiendo
 ## Entregable
 Para esta práctica debereis crear una serie de reglas tanto en Linux con UFW como en Windows con el Firewall de Windows. Despues me tendreis que hacer y enviar una serie de capturas.
 En UFW me tendreis que hacer las siguientes reglas:
+
 1. Permitir el tráfico de entrada SSH (puerto 22).
 2. Limitar el tráfico de entrada HTTP (puerto 80).
 3. Permitir el tráfico de entrada desde la dirección IP 192.168.1.100.
 4. Denegar el tráfico de salida hacia la dirección IP 192.168.1.200.
 
 En el Firewall de Windows me tendreis que hacer las siguientes reglas:
+
 1. Permitir el tráfico de entrada RDP (puerto 3389).
 2. Limitar el tráfico de entrada ICMP (ping).
 3. Permitir el tráfico de entrada desde la dirección IP 192.168.1.100.
