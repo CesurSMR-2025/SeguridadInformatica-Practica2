@@ -10,11 +10,11 @@ Existen varios tipos de firewalls, cada uno con sus propias características y m
 3. **Firewalls de aplicación**: Se centran en el tráfico de aplicaciones específicas y pueden filtrar contenido a nivel de aplicación.
 4. **Firewalls de estado**: Son firewalls más avanzados que mantienen un registro del estado de las conexiones y pueden tomar decisiones de filtrado basadas en el contexto de la conexión. Mientras que los otros tipos de firewalls se centran en el filtrado de paquetes individuales, los firewalls de estado son capaces de realizar un seguimiento de las conexiones activas.
 
-## Netfilter
+## Netfilter (Linux)
 
 Netfilter es el sistema de filtrado de paquetes de Linux y proporciona las capacidades de firewall a través de **iptables**. Permite a los administradores de sistemas interceptar y manipular el tráfico de red en diferentes puntos de la pila de protocolos. Puede actuar tanto de firewall de red como de firewall de host.
 
-## Iptables
+## Iptables (Linux)
 
 Iptables es una herramienta de filtrado de paquetes para Linux que permite a los administradores de sistemas configurar reglas de firewall en el nivel del kernel. Utiliza una arquitectura de tablas y cadenas para definir cómo se debe tratar el tráfico de red. Las principales características de iptables incluyen:
 
@@ -30,7 +30,7 @@ sudo iptables -L
 
 Iptables es una herramienta poderosa, pero su configuración puede ser tediosa y compleja. Por esto, se han desarrollado herramientas como **UFW** (Uncomplicated Firewall) que simplifican la gestión de iptables.
 
-## UFW
+## UFW (Linux)
 
 UFW (Uncomplicated Firewall) es una interfaz de línea de comandos para iptables diseñada para facilitar la configuración de un firewall en sistemas Linux. Proporciona un conjunto de comandos simples y fáciles de usar para permitir o denegar el tráfico de red, lo que lo hace ideal para usuarios que no son expertos en seguridad de red. Esta diseñado para ser usado como un firewall de host, aunque es perfectamente capaz de funcionar como un firewall de red con configuraciones adecuadas.
 
@@ -217,5 +217,46 @@ sudo ufw default allow outgoing
 sudo ufw default deny incoming
 ```
 
+## Windows Firewall
+
+El Firewall de Windows es una herramienta de seguridad integrada en el sistema operativo Windows que ayuda a proteger el equipo contra accesos no autorizados y amenazas externas. Algunas de sus características son:
+
+- **Activación y desactivación**: El Firewall de Windows se puede activar o desactivar desde el Panel de Control o la Configuración de Windows.
+
+- **Configuración de reglas**: Se pueden crear reglas para permitir o denegar el tráfico en función de la aplicación, el puerto o la dirección IP.
+
+- **Perfiles de red**: El Firewall de Windows permite configurar diferentes reglas según el perfil de red activo (público, privado o de dominio).
+
+- **Registro de eventos**: El Firewall de Windows puede registrar eventos relacionados con el tráfico bloqueado o permitido, lo que facilita la supervisión y el análisis de la seguridad.
+
+Para acceder al Firewall de Windows, abre el buscador de Windows y busca Windows Defender Firewall con seguridad avanzada. Tambien puedes pulsar windows + R, escribir "firewall.cpl" y pulsas enter.
+
+Para agregar una regla de entrada o salida, puedes seguir estos pasos:
+1. En el Firewall de Windows, haz clic en "Configuración avanzada" en el panel izquierdo.
+2. Selecciona "Reglas de entrada" o "Reglas de salida" según sea necesario.
+3. Haz clic en "Nueva regla" en el panel derecho y sigue el asistente para crear la regla.
+4. Configura los parámetros de la regla y haz clic en "Finalizar" para guardarla.
+
+La regla nueva aparecerá en la lista de reglas de entrada o salida, dependiendo de la opción seleccionada.
 
 ## Entregable
+Para esta práctica debereis crear una serie de reglas tanto en Linux con UFW como en Windows con el Firewall de Windows. Despues me tendreis que hacer y enviar una serie de capturas.
+En UFW me tendreis que hacer las siguientes reglas:
+1. Permitir el tráfico de entrada SSH (puerto 22).
+2. Limitar el tráfico de entrada HTTP (puerto 80).
+3. Permitir el tráfico de entrada desde la dirección IP 192.168.1.100.
+4. Denegar el tráfico de salida hacia la dirección IP 192.168.1.200.
+
+En el Firewall de Windows me tendreis que hacer las siguientes reglas:
+1. Permitir el tráfico de entrada RDP (puerto 3389).
+2. Limitar el tráfico de entrada ICMP (ping).
+3. Permitir el tráfico de entrada desde la dirección IP 192.168.1.100.
+4. Denegar el tráfico de salida hacia la dirección IP 192.168.1.200.
+
+
+
+### Capturas a entregar
+- Captura de pantalla del estado del servicio UFW.
+- Captura de pantalla del estado de UFW con las reglas creadas.
+- Captura de pantalla del estado del Firewall de Windows con las reglas de entrada  creadas.
+- Captura de pantalla del estado del Firewall de Windows con las reglas de salida creadas.
